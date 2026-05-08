@@ -7,13 +7,12 @@ name = "typer-powertools"
 version = "0.2.0"
 description = "Extended batteries for Typer - 12 CLI extensions"
 readme = "README.md"
-license = { text = "APL2" }
+license = "Apache-2.0"
 requires-python = ">=3.9"
 authors = [{ name = "Muhammad Ali"}]
 keywords = ["cli", "typer", "terminal", "config", "audit", "i18n", "progress", "tools"]
 classifiers = [
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache License 2.0",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",

@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "typer-powertools"
+version = "0.2.0"
+description = "Extended batteries for Typer - 12 CLI extensions"
+readme = "README.md"
+license = { text = "APL2" }
+requires-python = ">=3.9"
+authors = [{ name = "Muhammad Ali"}]
+keywords = ["cli", "typer", "terminal", "config", "audit", "i18n", "progress", "tools"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache License 2.0",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "tomli>=2.0.0; python_version < '3.11'",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+audit = ["aiosqlite>=0.19.0"]
+i18n = ["babel>=2.12.0"]
+cache = ["diskcache>=5.6.0"]
+templates = ["jinja2>=3.1.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "black",
+    "isort",
+    "mypy",
+]
+all = ["typer-powertools[audit,i18n,cache,templates]"]
+
+[project.urls]
+Homepage = "https://github.com/m-ali-ubit/typer-powertools"
+Repository = "https://github.com/m-ali-ubit/typer-powertools"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["typer_powertools*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "pytest-asyncio>=1.2.0",
+]
